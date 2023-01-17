@@ -1,14 +1,14 @@
-const constants = require("./constants");
+// const constants = require("./constants");
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     reactStrictMode: true,
     images: {
         loader: "akamai",
-        path: ".",
+        path: "/",
     },
-    // basePath: constants.path,
-    // assetPrefix: constants.path,
+    // basePath: "/",
+    assetPrefix: "/",
 };
 
 module.exports = nextConfig;
