@@ -6,7 +6,8 @@ function Main() {
             <div className='max-w-[1240px] w-full h-full mx-auto p-2 flex justify-center items-center'>
                 <div className=''>
                     <p className='uppercase text-sm tracking-widest text-gray-600'>
-                        LET&apos;S BUILD SOMETHING TOGETHER
+                        LET&apos;S BUILD SOMETHING TOGETHER, WRITE
+                        SOMETHING
                     </p>
                     <h1 className='py-4 text-gray-700'>
                         Hi, I&apos;m{" "}
