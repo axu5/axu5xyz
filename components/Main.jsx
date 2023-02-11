@@ -6,8 +6,7 @@ function Main() {
             <div className='max-w-[1240px] w-full h-full mx-auto p-2 flex justify-center items-center'>
                 <div className=''>
                     <p className='uppercase text-sm tracking-widest text-gray-600'>
-                        LET&apos;S BUILD SOMETHING TOGETHER, WRITE
-                        SOMETHING
+                        I&apos;m 17 and I love building things
                     </p>
                     <h1 className='py-4 text-gray-700'>
                         Hi, I&apos;m{" "}
@@ -17,8 +16,8 @@ function Main() {
                         A Full-Stack developer
                     </h1>
                     <p className='py-4 text-gray-600 max-w-[70%] m-auto'>
-                        I&apos;m a full stack developer and student
-                        based in Malta and born in Finland.
+                        I&apos;m a fulltime student based in Malta and
+                        born in Finland.
                     </p>
                 </div>
             </div>

@@ -11,4 +11,13 @@ const nextConfig = {
     assetPrefix: "/",
 };
 
-module.exports = nextConfig;
+const withMDX = require("@next/mdx")({
+    extension: /\.mdx?$/,
+});
+
+module.exports = {
+    ...nextConfig,
+    ...withMDX({
+        pageExtensions: ["ts", "tsx", "js", "jsx", "md", "mdx"],
+    }),
+};
