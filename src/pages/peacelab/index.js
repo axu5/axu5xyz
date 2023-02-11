@@ -48,7 +48,6 @@ function Peacelab() {
                     </thead>
                     <tbody>
                         {new Array(length).fill(0).map((_, key) => {
-                            console.log(key);
                             const [beginnerId, beginnerName] =
                                 Object.entries(beginner)[key] || [];
                             const [intermediateId, intermediateName] =
@@ -61,8 +60,7 @@ function Peacelab() {
                                     <td>
                                         {beginnerId && (
                                             <Link
-                                                href={`/${courseBasePath}/beginner/${beginnerId}`}
-                                            >
+                                                href={`/${courseBasePath}/beginner/${beginnerId}`}>
                                                 {beginnerName}
                                             </Link>
                                         )}
@@ -70,8 +68,7 @@ function Peacelab() {
                                     <td>
                                         {intermediateId && (
                                             <Link
-                                                href={`/${courseBasePath}/intermediate/${intermediateId}`}
-                                            >
+                                                href={`/${courseBasePath}/intermediate/${intermediateId}`}>
                                                 {intermediateName}
                                             </Link>
                                         )}
@@ -79,8 +76,7 @@ function Peacelab() {
                                     <td>
                                         {advancedId && (
                                             <Link
-                                                href={`/${courseBasePath}/intermediate/${advancedId}`}
-                                            >
+                                                href={`/${courseBasePath}/intermediate/${advancedId}`}>
                                                 {advancedName}
                                             </Link>
                                         )}
