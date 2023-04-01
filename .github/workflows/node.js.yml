@@ -5,9 +5,9 @@ name: Node.js CI
 
 on:
   push:
-    branches: [ "main" ]
+    branches: ["main"]
   pull_request:
-    branches: [ "main" ]
+    branches: ["main"]
 
 permissions:
   contents: write
@@ -17,21 +17,22 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout 🛎️
-      uses: actions/checkout@v3
-      
-    - name: Install and Build 🔧
-      # May need rm -rf node_modules
-      # https://stackoverflow.com/questions/58482655/what-is-the-closest-to-npm-ci-in-yarn
-      run: |
-        yarn install --frozen-lockfile
-        yarn build
-        yarn export
-    
-    - run: touch ./out/.nojekyll
-    
-    - name: Deploy 🚀
-      uses: JamesIves/github-pages-deploy-action@v4
-      with:
-        branch: gh-pages # The branch that will be deployed to pages.
-        folder: out # The folder the action should deploy.
+      - name: Checkout 🛎️
+        uses: actions/checkout@v3
+
+      - name: Install and Build 🔧
+        # May need rm -rf node_modules
+        # https://stackoverflow.com/questions/58482655/what-is-the-closest-to-npm-ci-in-yarn
+        # https://yarnpkg.com/cli/install
+        run: |
+          yarn install --immutable --immutable-cache --check-cache
+          yarn build
+          yarn export
+
+      - run: touch ./out/.nojekyll
+
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          branch: gh-pages # The branch that will be deployed to pages.
+          folder: out # The folder the action should deploy.
