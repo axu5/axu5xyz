@@ -1,4 +1,3 @@
-import type { Metadata } from "next";
 import Image from "next/image";
 import React from "react";
 import { differenceInYears } from "date-fns";
@@ -6,11 +5,6 @@ import Link from "next/link";
 
 const myBirthday = new Date(0);
 myBirthday.setFullYear(2005, 3, 8);
-
-export const metadata: Metadata = {
-    title: "axu5 | dev",
-    description: "My name is Aleks",
-};
 
 export default function Home() {
     return (
