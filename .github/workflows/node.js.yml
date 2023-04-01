@@ -22,9 +22,9 @@ jobs:
       
     - name: Install and Build 🔧
       run: |
-        npm ci
-        npm run build
-        npm run export
+        yarn ci
+        yarn build
+        yarn export
     
     - run: touch ./out/.nojekyll
     
