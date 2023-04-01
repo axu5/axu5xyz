@@ -21,8 +21,10 @@ jobs:
       uses: actions/checkout@v3
       
     - name: Install and Build 🔧
+      # May need rm -rf node_modules
+      # https://stackoverflow.com/questions/58482655/what-is-the-closest-to-npm-ci-in-yarn
       run: |
-        yarn ci
+        yarn install --frozen-lockfile
         yarn build
         yarn export
     
