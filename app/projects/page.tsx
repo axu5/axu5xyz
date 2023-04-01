@@ -62,7 +62,7 @@ export default function Projects() {
     ];
 
     return (
-        <>
+        <div>
             <div className='w-full h-screen text-center'>
                 <div className='max-w-[1240px] w-full mx-auto p-2 flex flex-row justify-center items-center'>
                     <h1 className='py-4 text-gray-700 text-3xl'>
@@ -88,6 +88,6 @@ export default function Projects() {
                     })}
                 </div>
             </div>
-        </>
+        </div>
     );
 }

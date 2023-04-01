@@ -25,9 +25,10 @@ jobs:
         # https://stackoverflow.com/questions/58482655/what-is-the-closest-to-npm-ci-in-yarn
         # https://yarnpkg.com/cli/install
         run: |
-          yarn install --immutable --immutable-cache --check-cache
+          yarn rm
+          yarn ci
           yarn build
-          yarn export
+          yarn start
 
       - run: touch ./out/.nojekyll
 

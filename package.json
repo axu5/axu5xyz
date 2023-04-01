@@ -7,6 +7,8 @@
         "build": "next build",
         "start": "next start",
         "export": "next export",
+        "rm": "rm -rf node_modules",
+        "ci": "yarn install --immutable --immutable-cache --check-cache",
         "lint": "next lint"
     },
     "dependencies": {
