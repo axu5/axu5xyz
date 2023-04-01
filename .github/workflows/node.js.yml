@@ -25,7 +25,6 @@ jobs:
         # https://stackoverflow.com/questions/58482655/what-is-the-closest-to-npm-ci-in-yarn
         # https://yarnpkg.com/cli/install
         run: |
-          yarn rm
           yarn ci
           yarn build
           yarn start
