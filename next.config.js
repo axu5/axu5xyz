@@ -3,21 +3,20 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     reactStrictMode: true,
-    images: {
-        loader: "akamai",
-        path: "/",
+    swcMinify: true,
+    experimental: {
+        appDir: true,
     },
-    // basePath: "/",
-    assetPrefix: "/",
+    images: {
+        remotePatterns: [
+            {
+                protocol: "https",
+                hostname: "github.com",
+                port: "",
+                pathname: "/axu5.png",
+            },
+        ],
+    },
 };
 
-const withMDX = require("@next/mdx")({
-    extension: /\.mdx?$/,
-});
-
-module.exports = {
-    ...nextConfig,
-    ...withMDX({
-        pageExtensions: ["ts", "tsx", "js", "jsx", "md", "mdx"],
-    }),
-};
+module.exports = nextConfig;
