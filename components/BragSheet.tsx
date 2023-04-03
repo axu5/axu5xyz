@@ -24,21 +24,12 @@ export default function BragSheet({
     return (
         <div
             className={cn(
-                "my-2",
-                `max-w-[50%]`,
-                `mx-auto`,
-                `w-full`,
-                `h-[40%]`,
-                `text-center`,
-                `p-5`,
-                `rounded`,
-                `shadow-md`,
-                `hover:shadow-xl`,
+                "my-2 md:max-w-[66%] xl:max-w-[50%] mx-auto w-full h-[40%] text-center p-5 rounded shadow-md hover:shadow-xl",
                 bg,
                 className
             )}
             {...rest}>
-            <div className='max-w-[1240px] w-full h-full mx-auto mp-2 flex justify-center items-center'>
+            <div className='max-w-[1240px] w-full h-full md:mx-auto mp-2 flex justify-center items-center'>
                 <div className=''>
                     <p className='uppercase pt-5 underline text-sm tracking-widest text-gray-600'>
                         {characteristic}

@@ -27,7 +27,7 @@ export default function Home() {
                         </p>
                     </div>
                 </div>
-                <div className='invisible md:visible md:max-w-[33%] md:w-full md:h-full md:mx-auto md:p-2 md:pr-10 flex justify-center items-center'>
+                <div className='hidden invisible md:visible md:max-w-[33%] md:w-full md:h-full md:mx-auto md:p-2 md:pr-10 md:flex md:justify-center md:items-center'>
                     <Link
                         href='https://github.com/axu5'
                         target='_blank'>
