@@ -46,7 +46,8 @@ export default function Clp2Img() {
             className='w-full h-[calc(100vh-5rem)] flex justify-center'
             onPaste={
                 handlePaste as unknown as ClipboardEventHandler<HTMLElement>
-            }>
+            }
+            autoFocus={true}>
             <h2 className='text-gray-400 w-[50%] m-auto'>
                 Paste an image here, and the download will start
                 instantly
