@@ -5,7 +5,7 @@ import getBirthdayParagraph from "@/helpers/getBirthdayParagraph";
 
 export default function Home() {
     return (
-        <>
+        <div>
             <div className='w-full h-[calc(100vh-5rem)] text-center flex flex-col md:flex-row'>
                 <div className='max-w-[1240px] w-full h-full mx-auto p-2 flex justify-center items-center'>
                     <div className=''>
@@ -41,6 +41,6 @@ export default function Home() {
                     </Link>
                 </div>
             </div>
-        </>
+        </div>
     );
 }
