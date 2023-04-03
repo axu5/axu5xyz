@@ -1,6 +1,6 @@
 "use client";
 
-import { ClipboardEventHandler } from "react";
+import { type ClipboardEventHandler } from "react";
 
 export default function Clp2Img() {
     async function download(
@@ -34,20 +34,21 @@ export default function Clp2Img() {
         const file = files.item(0);
         if (file == undefined) return;
 
-        const { type, lastModified } = file;
+        const { name, type } = file;
         const data = file.stream();
         if (data == undefined) return;
 
-        download(lastModified.toString(), type, data);
+        download(name, type, data);
     }
+
+    const handlePasteWithCorrectType =
+        // hack to get around type checker (doesn't seem to matter?)
+        handlePaste as unknown as ClipboardEventHandler<HTMLElement>;
 
     return (
         <section
             className='w-full h-[calc(100vh-5rem)] flex justify-center'
-            onPaste={
-                handlePaste as unknown as ClipboardEventHandler<HTMLElement>
-            }
-            autoFocus={true}>
+            onPaste={handlePasteWithCorrectType}>
             <h2 className='text-gray-400 w-[50%] m-auto'>
                 Paste an image here, and the download will start
                 instantly
