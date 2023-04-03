@@ -3,6 +3,10 @@ import BragSheet, {
 } from "@/components/BragSheet";
 import Link from "next/link";
 
+export const metadata = {
+    title: "axu5 | projects",
+};
+
 export default function Projects() {
     const achievements: readonly BragSheetType[] = [
         {

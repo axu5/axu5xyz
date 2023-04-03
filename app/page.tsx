@@ -1,10 +1,7 @@
 import Image from "next/image";
 import React from "react";
-import { differenceInYears } from "date-fns";
 import Link from "next/link";
-
-const myBirthday = new Date(0);
-myBirthday.setFullYear(2005, 3, 8);
+import getBirthdayParagraph from "@/helpers/getBirthdayParagraph";
 
 export default function Home() {
     return (
@@ -13,12 +10,7 @@ export default function Home() {
                 <div className='max-w-[1240px] w-full h-full mx-auto p-2 flex justify-center items-center'>
                     <div className=''>
                         <p className='uppercase text-sm tracking-widest text-gray-600'>
-                            I&apos;m{" "}
-                            {differenceInYears(
-                                new Date(),
-                                myBirthday
-                            )}{" "}
-                            and I love building things
+                            {getBirthdayParagraph()}
                         </p>
                         <h1 className='py-4 text-gray-700 text'>
                             Hi, I&apos;m{" "}
