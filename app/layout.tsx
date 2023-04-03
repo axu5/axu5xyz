@@ -1,7 +1,6 @@
 import "@/styles/globals.css";
 import { type ReactNode } from "react";
 import "@/styles/globals.css";
-import NavBar from "@/components/NavBar";
 import getBirthdayParagraph from "@/helpers/getBirthdayParagraph";
 import Link from "next/link";
 
@@ -43,6 +42,11 @@ export default function RootLayout({ children }: RootLayoutProps) {
                                     <li className='nav-link'>
                                         <Link href='/contact'>
                                             Contact
+                                        </Link>
+                                    </li>
+                                    <li className='nav-link'>
+                                        <Link href='/tools'>
+                                            Tools
                                         </Link>
                                     </li>
                                 </ul>
