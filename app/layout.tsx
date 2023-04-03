@@ -1,29 +1,25 @@
 import "@/styles/globals.css";
+import Head from "next/head";
 import { type ReactNode } from "react";
+import "@/styles/globals.css";
 import NavBar from "@/components/NavBar";
-import type { Metadata } from "next";
 
-export const metadata: Metadata = {
-    title: "axu5 | dev",
-    description: "My name is Aleks",
+type Props = {
+    children: ReactNode;
 };
 
-export default function RootLayout({
-    children,
-}: {
-    children: ReactNode;
-}) {
+export default function MyApp({ children }: Props) {
     return (
-        <main>
-            <head>
+        <>
+            <Head>
                 <link
                     rel='icon'
                     type='image/png'
                     href='https://github.com/axu5.png'
                 />
-            </head>
+            </Head>
             <NavBar />
             {children}
-        </main>
+        </>
     );
 }
