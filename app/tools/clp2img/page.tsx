@@ -58,7 +58,7 @@ export default function Clp2Img() {
                 instantly
             </h2>
             <input
-                className='w-[50%] mx-auto'
+                className='w-[50%] mx-auto mt-5'
                 ref={inputRef}
                 type='text'
                 placeholder='Input a file name'
