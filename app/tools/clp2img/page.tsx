@@ -1,8 +1,10 @@
 "use client";
 
-import { type ClipboardEventHandler } from "react";
+import { type ClipboardEventHandler, useRef } from "react";
 
 export default function Clp2Img() {
+    const inputRef = useRef<HTMLInputElement>(null);
+
     async function download(
         fileName: string,
         fileType: string,
@@ -27,6 +29,7 @@ export default function Clp2Img() {
 
     function handlePaste(e: ClipboardEvent) {
         if (e.clipboardData == undefined) return;
+        if (inputRef.current == undefined) return;
 
         const { files } = e.clipboardData;
         if (files.length == 0) return;
@@ -36,9 +39,10 @@ export default function Clp2Img() {
 
         const { name, type } = file;
         const data = file.stream();
+        const fileName = inputRef.current.value ?? data;
         if (data == undefined) return;
 
-        download(name, type, data);
+        download(fileName, type, data);
     }
 
     const handlePasteWithCorrectType =
@@ -47,12 +51,19 @@ export default function Clp2Img() {
 
     return (
         <section
-            className='w-full h-[calc(100vh-5rem)] flex justify-center'
+            className='w-full h-[calc(100vh-5rem)] flex flex-col justify-center'
             onPaste={handlePasteWithCorrectType}>
-            <h2 className='text-gray-400 w-[50%] m-auto'>
+            <h2 className='text-gray-400 w-[50%] mx-auto'>
                 Paste an image here, and the download will start
                 instantly
             </h2>
+            <input
+                className='w-[50%] mx-auto'
+                ref={inputRef}
+                type='text'
+                placeholder='Input a file name'
+                autoFocus
+            />
         </section>
     );
 }
