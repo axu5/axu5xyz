@@ -3,6 +3,7 @@ import { type ReactNode } from "react";
 import "@/styles/globals.css";
 import getBirthdayParagraph from "@/helpers/getBirthdayParagraph";
 import Link from "next/link";
+import { Analytics } from "@vercel/analytics/react";
 
 type RootLayoutProps = {
     children: ReactNode;
@@ -55,6 +56,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
                     </div>
                 </nav>
                 {children}
+                <Analytics />
             </body>
         </html>
     );
