@@ -14,7 +14,7 @@ export default function Tools() {
                             key={k}
                             className='w-full h-full'
                             href={v}>
-                            <li className='p-5 rounded bg-slate-300 hover:cursor-pointer hover:drop-shadow-md hover:underline'>
+                            <li className='p-5 my-2 rounded bg-slate-300 hover:cursor-pointer hover:drop-shadow-md hover:underline'>
                                 {k}
                             </li>
                         </Link>
