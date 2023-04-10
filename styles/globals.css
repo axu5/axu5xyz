@@ -28,10 +28,6 @@
         @apply cursor-pointer;
     }
 
-    button {
-        @apply shadow-xl shadow-gray-400 rounded-xl uppercase bg-gradient-to-r from-[#5651e5] to-[#709dff] text-white;
-    }
-
     .nav-link {
         @apply mx-5 md:ml-10 text-sm uppercase hover:border-b hover:tracking-wider ease-in duration-500;
     }
