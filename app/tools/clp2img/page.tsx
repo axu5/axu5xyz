@@ -20,11 +20,11 @@ export default function Clp2Img() {
 
         // download hack thing
         const a = document.createElement("a");
-        const url = window.URL.createObjectURL(blob);
+        const url = URL.createObjectURL(blob);
         a.href = url;
         a.download = fileName;
         a.click();
-        window.URL.revokeObjectURL(url);
+        URL.revokeObjectURL(url);
     }
 
     function handlePaste(e: ClipboardEvent) {

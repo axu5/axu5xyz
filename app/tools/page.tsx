@@ -3,6 +3,7 @@ import Link from "next/link";
 export default function Tools() {
     const tools = {
         Clp2Img: "/tools/clp2img",
+        Youtube2GIF: "/tools/youtube2gif",
     };
 
     return (
