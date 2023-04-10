@@ -19,6 +19,27 @@ const nextConfig = {
             },
         ],
     },
+    async headers() {
+        return [
+            {
+                source: "/tools/youtube2gif", // "tools/youtube2gif",
+                headers: [
+                    {
+                        key: "Cross-Origin-Embedder-Policy",
+                        value: "require-corp",
+                    },
+                    {
+                        key: "Cross-Origin-Opener-Policy",
+                        value: "same-origin",
+                    },
+                    // {
+                    //     key: "Access-Control-Allow-Origin",
+                    //     value: "*",
+                    // },
+                ],
+            },
+        ];
+    },
 };
 
 module.exports = nextConfig;
