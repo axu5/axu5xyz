@@ -33,3 +33,5 @@ yarn-error.log*
 .history
 .history/**/*
 .next-env.d.ts
+
+.env
