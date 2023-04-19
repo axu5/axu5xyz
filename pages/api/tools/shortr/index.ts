@@ -48,4 +48,6 @@ export default async function handler(
     res.json({
         short,
     } satisfies ShortrResponseType);
+    res.end();
+    return;
 }

@@ -7,6 +7,10 @@ import {
 } from "@/shared/tools/shortr";
 import { FormEvent, useRef, useState } from "react";
 
+function makeLink(short: string) {
+    return `https://axu5.vercel.app/api/shortr/${short}`;
+}
+
 export default function Shortr() {
     const longRef = useRef<HTMLInputElement>(null);
     const [short, setShort] = useState("");
@@ -30,7 +34,7 @@ export default function Shortr() {
     }
 
     function copy() {
-        const link = `https://axu5.vercel.app/shortr/${short}`;
+        const link = makeLink(short);
         navigator.clipboard.writeText(link);
     }
 
