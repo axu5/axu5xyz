@@ -12,18 +12,19 @@ function makeLink(short: string) {
 }
 
 export default function Shortr() {
-    const longRef = useRef<HTMLInputElement>(null);
+    // const longRef = useRef<HTMLInputElement>(null);
+    const [long, setLong] = useState("");
     const [short, setShort] = useState("");
 
     async function submit(e: FormEvent) {
         e.preventDefault();
 
-        if (!longRef.current) return;
+        if (!long || !short) return;
 
         const res = await fetch("/api/tools/shortr", {
             method: "POST",
             body: JSON.stringify({
-                long: longRef.current.value,
+                long: long,
             } satisfies ShortrBodyType),
         });
 
@@ -31,10 +32,11 @@ export default function Shortr() {
             (await res.json()) as unknown as ShortrResponseType;
 
         setShort(dat.short);
+        copy(dat.short);
     }
 
-    function copy() {
-        const link = makeLink(short);
+    function copy(str: string | void) {
+        const link = makeLink(str || short);
         navigator.clipboard.writeText(link);
     }
 
@@ -47,20 +49,19 @@ export default function Shortr() {
             </h2>
             <input
                 className='w-[50%] mx-auto mt-5'
-                ref={longRef}
-                onChange={() => {
-                    const l = longRef.current;
-                    if (!l) return;
-                    setShort(hashURL(l.value));
+                onChange={elem => {
+                    const { value } = elem.target;
+                    setLong(value);
+                    setShort(hashURL(value));
                 }}
                 type='text'
                 placeholder='Long link'
                 autoFocus
             />
-            {longRef.current && longRef.current.value.length && (
+            {!!short && (
                 <button
                     className='text-gray-400 w-[50%] mx-auto border py-2 my-2 hover:bg-gray-200 hover:shadow-lg hover:cursor-pointer'
-                    onClick={copy}>
+                    onClick={() => copy()}>
                     {short}
                 </button>
             )}

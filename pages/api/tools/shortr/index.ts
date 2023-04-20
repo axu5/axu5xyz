@@ -21,22 +21,26 @@ export default async function handler(
         req.body
     ) as unknown as ShortrBodyType;
 
-    // todo: hash long
     const short = hashURL(long);
+    if (!short.length) {
+        res.status(500);
+        return;
+    }
 
-    // todo: check if short exists
     const response = await db.urlShortener.findUnique({
         where: {
             short,
         },
     });
 
-    if (response !== null) {
-        res.status(404);
+    if (!!response) {
+        res.json({
+            short,
+        } satisfies ShortrResponseType);
+        res.end();
         return;
     }
 
-    // todo: add short to db
     await db.urlShortener.create({
         data: {
             long,
