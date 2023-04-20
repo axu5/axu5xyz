@@ -5,14 +5,13 @@ import {
     ShortrResponseType,
     hashURL,
 } from "@/shared/tools/shortr";
-import { FormEvent, useRef, useState } from "react";
+import { FormEvent, useState } from "react";
 
 function makeLink(short: string) {
     return `https://axu5.vercel.app/api/shortr/${short}`;
 }
 
 export default function Shortr() {
-    // const longRef = useRef<HTMLInputElement>(null);
     const [long, setLong] = useState("");
     const [short, setShort] = useState("");
 
