@@ -3,7 +3,7 @@
 import {
     ShortrBodyType,
     ShortrResponseType,
-    hash,
+    hashURL,
 } from "@/shared/tools/shortr";
 import { FormEvent, useRef, useState } from "react";
 
@@ -51,7 +51,7 @@ export default function Shortr() {
                 onChange={() => {
                     const l = longRef.current;
                     if (!l) return;
-                    setShort(hash(l.value));
+                    setShort(hashURL(l.value));
                 }}
                 type='text'
                 placeholder='Long link'

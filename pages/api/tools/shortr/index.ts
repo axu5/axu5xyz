@@ -3,7 +3,7 @@ import type { NextApiRequest, NextApiResponse } from "next/types";
 import {
     ShortrBodyType,
     ShortrResponseType,
-    hash,
+    hashURL,
 } from "@/shared/tools/shortr";
 
 export const db = new PrismaClient();
@@ -22,7 +22,7 @@ export default async function handler(
     ) as unknown as ShortrBodyType;
 
     // todo: hash long
-    const short = hash(long);
+    const short = hashURL(long);
 
     // todo: check if short exists
     const response = await db.urlShortener.findUnique({
