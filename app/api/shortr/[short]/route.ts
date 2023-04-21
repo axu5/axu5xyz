@@ -1,9 +1,11 @@
-import { NextResponse } from "next/server";
+import { type NextRequest, NextResponse } from "next/server";
 
 export async function GET(
-    _: Request,
+    request: NextRequest,
     { params }: { params: { short: string } }
 ) {
+    const url = request.nextUrl.clone();
     const { short } = params;
-    return NextResponse.redirect(`/s/${short}`);
+    url.pathname = `/s/${short}`;
+    return NextResponse.redirect(url);
 }
