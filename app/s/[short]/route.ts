@@ -1,7 +1,8 @@
 import { db } from "@/app/tools/shortr/new/route";
 import { NextResponse } from "next/server";
 
-export const revalidate = 60;
+// Data does not change often, if at all
+export const revalidate = 24 * 60 * 60;
 
 // https://beta.nextjs.org/docs/routing/route-handlers
 export async function GET(
