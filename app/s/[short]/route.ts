@@ -1,6 +1,5 @@
-import { db } from "@/pages/api/tools/shortr";
+import { db } from "@/app/tools/shortr/new/route";
 // import { type NextRequest } from "next/server";
-import { redirect } from "next/navigation";
 import { NextResponse } from "next/server";
 
 export const revalidate = 60;
@@ -34,36 +33,3 @@ export async function GET(
         return new Response("Not Found", { status: 404 });
     }
 }
-
-// export default async function handler(
-//     req: NextApiRequest,
-//     res: NextApiResponse
-// ) {
-//     console.log(req);
-//     return;
-//     const { short } = req.query;
-
-//     if (!short || typeof short !== "string") {
-//         res.status(404);
-//         return;
-//     }
-
-//     const dbRes = await db.urlShortener.update({
-//         where: {
-//             short,
-//         },
-//         data: {
-//             count: {
-//                 increment: 1,
-//             },
-//         },
-//     });
-
-//     if (!dbRes) {
-//         res.status(404);
-//         return;
-//     }
-
-//     res.redirect(dbRes.long);
-//     return;
-// }

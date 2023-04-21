@@ -1,11 +1,10 @@
-import { db } from "@/pages/api/tools/shortr";
 import { NextApiRequest, NextApiResponse } from "next/types";
 
 export default async function handler(
     req: NextApiRequest,
     res: NextApiResponse
 ) {
+    // Keep this page for legacy links
     const { short } = req.query;
-    console.log("LEGACY VERSION DETECTED");
     res.redirect(`/s/${short}`);
 }

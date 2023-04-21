@@ -1,30 +1,21 @@
 import { PrismaClient } from "@prisma/client";
-import type { NextApiRequest, NextApiResponse } from "next/types";
 import {
     ShortrBodyType,
     ShortrResponseType,
     hashURL,
 } from "@/shared/tools/shortr";
+import { type NextRequest, NextResponse } from "next/server";
 
 export const db = new PrismaClient();
 
-export default async function handler(
-    req: NextApiRequest,
-    res: NextApiResponse
-) {
-    if (req.method !== "POST") {
-        res.status(404);
-        return;
-    }
-
-    const { long } = JSON.parse(
-        req.body
-    ) as unknown as ShortrBodyType;
+export async function POST(req: NextRequest) {
+    const { long } = (await req.json()) as unknown as ShortrBodyType;
 
     const short = hashURL(long);
     if (!short.length) {
-        res.status(500);
-        return;
+        return new Response("Bad input", {
+            status: 400,
+        });
     }
 
     const response = await db.urlShortener.findUnique({
@@ -34,11 +25,9 @@ export default async function handler(
     });
 
     if (!!response) {
-        res.json({
+        return NextResponse.json({
             short,
         } satisfies ShortrResponseType);
-        res.end();
-        return;
     }
 
     await db.urlShortener.create({
@@ -49,9 +38,7 @@ export default async function handler(
         },
     });
 
-    res.json({
+    return NextResponse.json({
         short,
     } satisfies ShortrResponseType);
-    res.end();
-    return;
 }

@@ -21,7 +21,7 @@ export default function Shortr(context: any) {
 
         if (!long || !short) return;
 
-        const res = await fetch("/api/tools/shortr", {
+        const res = await fetch("/tools/shortr/new", {
             method: "POST",
             body: JSON.stringify({
                 long: long,
