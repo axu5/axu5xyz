@@ -8,10 +8,11 @@ import {
 import { FormEvent, useState } from "react";
 
 function makeLink(short: string) {
-    return `https://axu5.vercel.app/api/shortr/${short}`;
+    // have access to window because of "use client"
+    return `${window.location.origin}/s/${short}`;
 }
 
-export default function Shortr() {
+export default function Shortr(context: any) {
     const [long, setLong] = useState("");
     const [short, setShort] = useState("");
 
