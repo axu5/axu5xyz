@@ -5,14 +5,14 @@ import {
     ShortrResponseType,
     hashURL,
 } from "@/shared/tools/shortr";
-import { FormEvent, useState } from "react";
+import { type FormEvent, useState } from "react";
 
 function makeLink(short: string) {
     // have access to window because of "use client"
     return `${window.location.origin}/s/${short}`;
 }
 
-export default function Shortr(context: any) {
+export default function Shortr() {
     const [long, setLong] = useState("");
     const [short, setShort] = useState("");
 
@@ -43,12 +43,13 @@ export default function Shortr(context: any) {
     return (
         <form
             onSubmit={submit}
-            className='w-full h-[calc(100vh-5rem)] flex flex-col justify-center'>
-            <h2 className='text-gray-400 w-[50%] mx-auto'>
-                Shorten a link
-            </h2>
+            className='w-[50%] mx-auto h-[calc(100vh-5rem)] flex flex-col justify-center'>
+            <a className='text-gray-500' href='/tools/shortr/all'>
+                See all links
+            </a>
+            <h2 className='text-gray-400'>Shorten a link</h2>
             <input
-                className='w-[50%] mx-auto mt-5'
+                className='mt-5'
                 onChange={elem => {
                     const { value } = elem.target;
                     setLong(value);
@@ -60,7 +61,7 @@ export default function Shortr(context: any) {
             />
             {!!short && (
                 <button
-                    className='text-gray-400 w-[50%] mx-auto border py-2 my-2 hover:bg-gray-200 hover:shadow-lg hover:cursor-pointer'
+                    className='text-gray-400 border py-2 my-2 hover:bg-gray-200 hover:shadow-lg hover:cursor-pointer'
                     onClick={() => copy()}>
                     {short}
                 </button>
