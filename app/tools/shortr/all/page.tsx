@@ -20,6 +20,7 @@ export default async function AllShortLinks() {
                         <a
                             className='flex flex-row rounded my-2 p-5 border-gray-600 shadow hover:border-gray-900 hover:shadow-lg hover:cursor-pointer'
                             key={link.createdAt.toUTCString()}
+                            target='_blank'
                             href={shortLink}>
                             <div className='w-[25%]'>
                                 {link.short}
