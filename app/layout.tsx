@@ -28,10 +28,10 @@ export default function RootLayout({ children }: RootLayoutProps) {
             </head>
             <body>
                 <nav>
-                    <div className='bg-white w-full h-20 shadow-xl'>
-                        <div className='flex justify-between items-center w-full h-full px-2 2xl:px-16'>
-                            <div className='mx-auto md:mx-0'>
-                                <ul className='flex'>
+                    <div className='bg-white w-screen h-20 shadow-xl'>
+                        <div className='flex justify-start items-center w-full h-full px-2 2xl:px-16'>
+                            <div className='mx-auto flex flex-col md:flex-row md:justify-start w-full md:mx-0'>
+                                <ul className='flex mx-auto md:mx-5'>
                                     <li className='nav-link'>
                                         <Link href='/'>Home</Link>
                                     </li>
