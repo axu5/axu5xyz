@@ -1,12 +1,10 @@
-import { PrismaClient } from "@prisma/client";
+import { db } from "@/shared/db";
 import {
     ShortrBodyType,
     ShortrResponseType,
     hashURL,
 } from "@/shared/tools/shortr";
 import { type NextRequest, NextResponse } from "next/server";
-
-export const db = new PrismaClient();
 
 export async function POST(req: NextRequest) {
     const { long } = (await req.json()) as unknown as ShortrBodyType;
