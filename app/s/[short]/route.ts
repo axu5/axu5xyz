@@ -1,4 +1,4 @@
-import { db } from "@/app/tools/shortr/new/route";
+import { db } from "@/shared/db";
 import { NextResponse } from "next/server";
 
 // Data does not change often, if at all
@@ -28,7 +28,6 @@ export async function GET(
         });
         return NextResponse.redirect(dbRes.long);
     } catch (_) {
-        console.log(_);
         // not found
         return new Response("Not Found", { status: 404 });
     }
