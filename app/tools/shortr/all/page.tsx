@@ -14,7 +14,7 @@ export default async function AllShortLinks() {
                 <div className='w-[25%]'>Date created</div>
             </div>
             <div className='flex flex-col'>
-                {allLinks.map((link, i) => {
+                {allLinks.map(link => {
                     const shortLink = `https://axu5.vercel.app/s/${link.short}`;
                     return (
                         <a
