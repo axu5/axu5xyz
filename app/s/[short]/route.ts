@@ -1,5 +1,4 @@
 import { db } from "@/app/tools/shortr/new/route";
-// import { type NextRequest } from "next/server";
 import { NextResponse } from "next/server";
 
 export const revalidate = 60;
