@@ -347,6 +347,8 @@ function getDomain(url: string) {
             };
         }
     }
+
+    return null;
 }
 
 export function hashURL(str: string) {
@@ -356,12 +358,11 @@ export function hashURL(str: string) {
 
         // Ignore search params
         const result = getDomain(url.hostname);
-        if (!result) throw "";
+        if (result == null) throw "";
         const { part: domain, parts: res, i: sldLen } = result;
         if (!domain) throw "";
         const subdomains = res.slice(0, sldLen).join("");
         const target = subdomains + domain + url.pathname;
-        console.log(target);
 
         // Some sort of basic URL parsing
         if (target.endsWith("./")) throw "";
@@ -376,10 +377,10 @@ export function hashURL(str: string) {
         /* JavaScript does bitwise operations (like XOR, above) on 32-bit signed
          * integers. Since we want the results to be always positive, convert the
          * signed int to an unsigned by doing an unsigned bitshift. */
-        const finalHash = (hashedInt >>> 0).toString(36);
+        const finalHash = hashedInt >>> 0;
 
-        // convert to base 36, nicely gives a 6 digit response
-        return finalHash;
+        // convert to base 36, and make it 6 digits long
+        return finalHash.toString(36).padEnd(6, "0");
     } catch (_) {
         return "";
     }
