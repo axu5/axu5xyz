@@ -38,6 +38,19 @@ export const metadata = {
         siteName: "axu5 | dev",
         images: ["https://github.com/axu5.png"],
     },
+    robots: {
+        index: true,
+        follow: true,
+        nocache: true,
+        googleBot: {
+            index: true,
+            follow: true,
+            noimageindex: false,
+            "max-video-preview": -1,
+            "max-image-preview": "large",
+            "max-snippet": -1,
+        },
+    },
 };
 
 // https://beta.nextjs.org/docs/routing/pages-and-layouts
