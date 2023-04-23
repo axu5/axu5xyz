@@ -2,7 +2,7 @@ import List from "@/components/List";
 import { Github, AtSign } from "lucide-react";
 
 export const metadata = {
-    title: "axu5 | contact",
+    title: "contact",
 };
 
 export default function Contact() {

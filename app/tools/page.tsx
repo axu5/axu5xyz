@@ -1,6 +1,10 @@
 import { Camera, Link2 } from "lucide-react";
 import List from "@/components/List";
 
+export const metadata = {
+    title: "tools",
+};
+
 export default function Tools() {
     const tools = [
         {

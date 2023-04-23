@@ -3,6 +3,10 @@ import React from "react";
 import Link from "next/link";
 import getBirthdayParagraph from "@/helpers/getBirthdayParagraph";
 
+export const metadata = {
+    title: "dev | axu5",
+};
+
 export default function Home() {
     return (
         <div className=''>

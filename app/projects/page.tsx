@@ -4,7 +4,7 @@ import BragSheet, {
 import Link from "next/link";
 
 export const metadata = {
-    title: "axu5 | projects",
+    title: "projects",
 };
 
 export default function Projects() {
