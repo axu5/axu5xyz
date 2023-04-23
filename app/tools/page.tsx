@@ -1,28 +1,36 @@
-import Link from "next/link";
+import { Camera, Link2 } from "lucide-react";
+import List from "@/components/List";
 
 export default function Tools() {
-    const tools = {
-        Clp2Img: "/tools/clp2img",
-        Shortr: "/tools/shortr",
-        // Youtube2GIF: "/tools/youtube2gif",
-    };
+    const tools = [
+        {
+            href: "/tools/clp2img",
+            inner: (
+                <>
+                    <Camera className='h-4 w-4 mr-2' />
+                    Clp2Img
+                </>
+            ),
+        },
+        {
+            href: "/tools/shortr",
+            inner: (
+                <>
+                    <Link2 className='h-4 w-4 mr-2' />
+                    Shortr
+                </>
+            ),
+        },
+    ];
 
     return (
-        <section className='w-[50%] mx-auto flex h-[calc(100vh-5rem)]'>
-            <ul className='m-auto w-full'>
-                {Object.entries(tools).map(([k, v]) => {
-                    return (
-                        <Link
-                            key={k}
-                            className='w-full h-full'
-                            href={v}>
-                            <li className='p-5 my-2 rounded bg-slate-300 hover:cursor-pointer hover:drop-shadow-md hover:underline'>
-                                {k}
-                            </li>
-                        </Link>
-                    );
-                })}
-            </ul>
+        <section className='mx-auto flex flex-col h-[calc(100vh-5rem)]'>
+            <div className='mx-auto p-2 flex flex-row justify-center items-center'>
+                <h1 className='py-4 text-gray-700 dark:text-gray-100 text-3xl'>
+                    My Tools
+                </h1>
+            </div>
+            <List list={tools} />
         </section>
     );
 }

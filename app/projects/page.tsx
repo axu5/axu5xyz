@@ -10,13 +10,15 @@ export const metadata = {
 export default function Projects() {
     const achievements: readonly BragSheetType[] = [
         {
-            bg: "bg-[#8651e522]",
+            bg: "bg-[#8651e522] dark:bg-[#8651e577]",
             characteristic: "Charity advocate.",
             _title: (
-                <>
+                <h2>
                     Peace
-                    <span className='text-[#5651e5]'>Lab</span>
-                </>
+                    <span className='text-[#5651e5] dark:text-[#7b78ce]'>
+                        Lab
+                    </span>
+                </h2>
             ),
             subtitle:
                 "I created documentation for computer usage to help refine peoples' skills.",
@@ -42,12 +44,15 @@ export default function Projects() {
             ),
         },
         {
-            bg: "bg-[#2244ff22]",
+            bg: "bg-[#2244ff22] dark:bg-[#2244ff88]",
             characteristic: "Committed Leader.",
             _title: (
-                <>
-                    <span className='text-[#2244bb]'>VIS</span> MUN
-                </>
+                <h2>
+                    <span className='text-blue-800 dark:text-blue-500'>
+                        VIS
+                    </span>{" "}
+                    MUN
+                </h2>
             ),
             subtitle:
                 "I created a website for my school's Model United Nations (MUN) club to help my teacher and the other leaders.",
@@ -66,32 +71,30 @@ export default function Projects() {
     ];
 
     return (
-        <div>
-            <div className='w-full h-screen text-center'>
-                <div className='max-w-[1240px] w-full mx-auto p-2 flex flex-row justify-center items-center'>
-                    <h1 className='py-4 text-gray-700 text-3xl'>
-                        My Projects
-                    </h1>
-                </div>
-                <div className='flex flex-col'>
-                    {achievements.map((achievement, i) => {
-                        return (
-                            <BragSheet
-                                key={i}
-                                bg={achievement.bg}
-                                _title={achievement._title}
-                                subtitle={achievement.subtitle}
-                                characteristic={
-                                    achievement.characteristic
-                                }
-                                additionalInfo={
-                                    achievement.additionalInfo
-                                }
-                            />
-                        );
-                    })}
-                </div>
+        <section className='w-full h-[calc(100vh-5rem)]  text-center'>
+            <div className='mx-auto p-2 flex flex-row justify-center items-center'>
+                <h1 className='py-4 text-gray-700 dark:text-gray-100 text-3xl'>
+                    My Projects
+                </h1>
             </div>
-        </div>
+            <div className='flex flex-col'>
+                {achievements.map((achievement, i) => {
+                    return (
+                        <BragSheet
+                            key={i}
+                            bg={achievement.bg}
+                            _title={achievement._title}
+                            subtitle={achievement.subtitle}
+                            characteristic={
+                                achievement.characteristic
+                            }
+                            additionalInfo={
+                                achievement.additionalInfo
+                            }
+                        />
+                    );
+                })}
+            </div>
+        </section>
     );
 }

@@ -30,17 +30,17 @@ export default function BragSheet({
             )}
             {...rest}>
             <div className='max-w-[1240px] w-full h-full md:mx-auto mp-2 flex justify-center items-center'>
-                <div className=''>
-                    <p className='uppercase pt-5 underline text-sm tracking-widest text-gray-600'>
+                <div className='mx-10'>
+                    <p className='uppercase dark:text-gray-200 pt-5 underline text-sm tracking-widest text-gray-600'>
                         {characteristic}
                     </p>
-                    <h1 className='py-4 text-gray-700 uppercase tracking-widest'>
+                    <h1 className='py-4 text-gray-700 dark:text-gray-100 uppercase tracking-widest'>
                         {_title}
                     </h1>
-                    <h1 className='py-4 text-gray-700 text-2xl'>
+                    <h1 className='py-4 text-gray-700 dark:text-gray-200 text-2xl'>
                         {subtitle}
                     </h1>
-                    <p className='py-4 text-gray-600 max-w-[70%] m-auto'>
+                    <p className='py-4 text-gray-600 dark:text-gray-200 max-w-[70%] m-auto'>
                         {additionalInfo}
                     </p>
                 </div>
