@@ -20,6 +20,10 @@ type RootLayoutProps = {
 export const metadata = {
     generator: "Next.js",
     applicationName: "axu5 | dev",
+    title: {
+        default: "dev",
+        template: "axu5 | %s",
+    },
     referrer: "origin-when-cross-origin",
     keywords: ["Portfolio", "Next.js", "Aleksanteri Aho", "axu5"],
     authors: [{ name: "axu5", url: "https://axu5.xyz" }],
