@@ -34,7 +34,7 @@ export default function Contact() {
                     Contact Information
                 </h1>
             </div>
-            <List list={list} />
+            <List blank={true} list={list} />
         </section>
     );
 }

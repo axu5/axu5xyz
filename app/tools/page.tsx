@@ -30,7 +30,7 @@ export default function Tools() {
                     My Tools
                 </h1>
             </div>
-            <List list={tools} />
+            <List blank={false} list={tools} />
         </section>
     );
 }
