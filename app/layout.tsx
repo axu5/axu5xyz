@@ -72,7 +72,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
                     href='https://github.com/axu5.png'
                 />
             </head>
-            <body>
+            <body className='selection:bg-pink-400'>
                 <nav className=''>
                     <div className='bg-white dark:bg-gray-800 dark:text-white w-full h-20 shadow-xl'>
                         <div className='flex items-center w-full h-full px-2 2xl:px-16'>
