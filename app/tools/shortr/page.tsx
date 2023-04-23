@@ -6,6 +6,7 @@ import {
     hashURL,
 } from "@/shared/tools/shortr";
 import { type FormEvent, useState } from "react";
+import { ClipboardCopy } from "lucide-react";
 
 function makeLink(short: string) {
     // have access to window because of "use client"
@@ -49,7 +50,7 @@ export default function Shortr() {
             </a>
             <h2 className='text-gray-400'>Shorten a link</h2>
             <input
-                className='mt-5'
+                className='mt-5 p-2 rounded-lg'
                 onChange={elem => {
                     const { value } = elem.target;
                     setLong(value);
@@ -61,9 +62,12 @@ export default function Shortr() {
             />
             {!!short && (
                 <button
-                    className='text-gray-400 border py-2 my-2 hover:bg-gray-200 hover:shadow-lg hover:cursor-pointer'
+                    className='text-gray-400 rounded-lg border py-2 my-2 hover:bg-gray-200 dark:hover:bg-slate-700 hover:shadow-lg hover:cursor-pointer'
                     onClick={() => copy()}>
-                    {short}
+                    <div className='flex flex-row mx-5 items-center'>
+                        <ClipboardCopy className='h-4 w-4 mr-2' />
+                        {short}
+                    </div>
                 </button>
             )}
         </form>
