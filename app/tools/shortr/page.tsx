@@ -6,7 +6,7 @@ import {
     hashURL,
 } from "@/shared/tools/shortr";
 import { type FormEvent, useState } from "react";
-import { ClipboardCopy } from "lucide-react";
+import { ArrowRight, ClipboardCopy } from "lucide-react";
 
 function makeLink(short: string) {
     // have access to window because of "use client"
@@ -45,8 +45,10 @@ export default function Shortr() {
         <form
             onSubmit={submit}
             className='w-[50%] mx-auto h-[calc(100vh-5rem)] flex flex-col justify-center'>
-            <a className='text-gray-500' href='/tools/shortr/all'>
-                See all links
+            <a
+                className='text-gray-500 dark:text-gray-400 flex flex-row items-center'
+                href='/tools/shortr/all'>
+                <ArrowRight className='h-4 w-4 mr-2' /> See all links
             </a>
             <h2 className='text-gray-400'>Shorten a link</h2>
             <input
