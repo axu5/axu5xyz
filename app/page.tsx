@@ -11,8 +11,8 @@ const descriptions = ["he/him", "IB Student"];
 
 export default function Home() {
     return (
-        <section>
-            <div className='w-full min-h-[calc(100vh-5rem)] text-center flex flex-col md:flex-row'>
+        <section className='min-h-[calc(100vh-5rem)]'>
+            <div className='w-full h-[calc(100vh-5rem)] text-center flex flex-col md:flex-row'>
                 <div className='max-w-[1240px] w-full h-full mx-auto p-2 flex justify-center items-center'>
                     <div className=''>
                         <p className='uppercase text-sm tracking-widest text-gray-600 dark:text-gray-300'>
