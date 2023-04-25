@@ -7,6 +7,8 @@ export const metadata = {
     title: "dev | axu5",
 };
 
+const descriptions = ["he/him", "Javascript", "Next.js"];
+
 export default function Home() {
     return (
         <div className=''>
@@ -17,14 +19,14 @@ export default function Home() {
                             {getBirthdayParagraph()}
                         </p>
                         <div className='py-4'>
-                            <h1 className='text-gray-700 dark:text-gray-100 text'>
+                            <h1 className='text-5xl font-bold md:text-6xl text-gray-700 dark:text-gray-100 text'>
                                 Hi, I&apos;m{" "}
                                 <span className='text-[#5651e5]'>
                                     Axu5
                                 </span>
                             </h1>
                         </div>
-                        <h2 className='py-4 text-gray-700 dark:text-gray-300 text-lg'>
+                        <h2 className='sm:text-4xl font-bold py-4 text-gray-700 dark:text-gray-300 text-lg'>
                             A Full-Stack developer
                         </h2>
                         <p className='py-4 text-gray-600 dark:text-gray-300 max-w-[70%] m-auto'>
@@ -45,9 +47,19 @@ export default function Home() {
                             width={500}
                         />
                     </Link>
-                    <span className='text-base bg-red rounded-lg pt-5 text-gray-500 dark:text-gray-300'>
-                        he/him
-                    </span>
+                    <div className='flex flex-row max-w-full overflow-ellipsis'>
+                        {descriptions.map((description, i) => {
+                            return (
+                                <div
+                                    key={i}
+                                    className='bg-gray-500 my-2 mx-1 rounded-2xl px-2'>
+                                    <span className='text-base pt-5 text-gray-500 dark:text-gray-300'>
+                                        {description}
+                                    </span>
+                                </div>
+                            );
+                        })}
+                    </div>
                 </div>
             </div>
         </div>

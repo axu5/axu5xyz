@@ -72,26 +72,26 @@ export default function RootLayout({ children }: RootLayoutProps) {
                     href='https://github.com/axu5.png'
                 />
             </head>
-            <body className='selection:bg-pink-400'>
+            <body className='selection:bg-pink-400 bg-[#ecf0f3] text-[#1f2937] tracking-wide'>
                 <nav className=''>
                     <div className='bg-white dark:bg-gray-800 dark:text-white w-full h-20 shadow-xl'>
                         <div className='flex items-center w-full h-full px-2 2xl:px-16'>
                             <div className='mx-auto flex flex-col md:flex-row md:justify-start w-full md:mx-0'>
                                 <ul className='flex justify-between  mx-auto md:mx-5'>
-                                    <li className='nav-link'>
+                                    <li className='cursor-pointer jmx-5 md:ml-10 text-sm uppercase hover:border-b hover:tracking-wider ease-in duration-500'>
                                         <Link href='/'>Home</Link>
                                     </li>
-                                    <li className='nav-link'>
+                                    <li className='cursor-pointer mx-5 md:ml-10 text-sm uppercase hover:border-b hover:tracking-wider ease-in duration-500'>
                                         <Link href='/projects'>
                                             Projects
                                         </Link>
                                     </li>
-                                    <li className='nav-link'>
+                                    <li className='cursor-pointer mx-5 md:ml-10 text-sm uppercase hover:border-b hover:tracking-wider ease-in duration-500'>
                                         <Link href='/contact'>
                                             Contact
                                         </Link>
                                     </li>
-                                    <li className='nav-link'>
+                                    <li className='cursor-pointer mx-5 md:ml-10 text-sm uppercase hover:border-b hover:tracking-wider ease-in duration-500'>
                                         <Link href='/tools'>
                                             Tools
                                         </Link>

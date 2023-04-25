@@ -53,12 +53,12 @@ export default function Clp2Img() {
         <section
             className='w-full h-[calc(100vh-5rem)] flex flex-col justify-center'
             onPaste={handlePasteWithCorrectType}>
-            <h2 className='text-gray-400 w-[50%] mx-auto'>
+            <h2 className='text-4xl sm:text-4xl text-gray-400 w-[50%] mx-auto'>
                 Paste an image here, and the download will start
                 instantly
             </h2>
             <input
-                className='w-[50%] mx-auto mt-5 p-2 rounded-lg'
+                className='text-4xl sm:text-4xl w-[50%] mx-auto mt-5 p-2 rounded-lg'
                 ref={inputRef}
                 type='text'
                 placeholder='Input a file name'

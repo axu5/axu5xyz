@@ -37,9 +37,9 @@ export default function Contact() {
     ];
 
     return (
-        <section className='w-full flex flex-col h-[calc(100vh-5rem)]'>
+        <section className='w-full flex flex-col min-h-[calc(100vh-5rem)]'>
             <div className='mx-auto p-2 flex flex-row justify-center items-center'>
-                <h1 className='py-4 text-gray-700 dark:text-gray-100 text-3xl'>
+                <h1 className='md:text-6xl font-bold py-4 text-gray-700 dark:text-gray-100 text-3xl'>
                     Contact Information
                 </h1>
             </div>

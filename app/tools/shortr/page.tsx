@@ -50,7 +50,9 @@ export default function Shortr() {
                 href='/tools/shortr/all'>
                 <ArrowRight className='h-4 w-4 mr-2' /> See all links
             </a> */}
-            <h2 className='text-gray-400'>Shorten a link</h2>
+            <h2 className='text-4xl sm:text-4xl text-gray-400'>
+                Shorten a link
+            </h2>
             <input
                 className='mt-5 p-2 rounded-lg'
                 onChange={elem => {

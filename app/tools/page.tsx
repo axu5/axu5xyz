@@ -28,9 +28,9 @@ export default function Tools() {
     ];
 
     return (
-        <section className='mx-auto flex flex-col h-[calc(100vh-5rem)]'>
+        <section className='mx-auto flex flex-col min-h-[calc(100vh-5rem)]'>
             <div className='mx-auto p-2 flex flex-row justify-center items-center'>
-                <h1 className='py-4 text-gray-700 dark:text-gray-100 text-3xl'>
+                <h1 className='md:text-6xl py-4 font-bold text-gray-700 dark:text-gray-100 text-3xl'>
                     My Tools
                 </h1>
             </div>

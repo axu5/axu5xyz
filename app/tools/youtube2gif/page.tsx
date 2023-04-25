@@ -131,7 +131,7 @@ export default function Youtube2Gif() {
 
     // return (
     //     <section className='w-full h-[calc(100vh-5rem)] flex flex-col justify-center'>
-    //         <h2 className='text-gray-400 w-[50%] mx-auto'>
+    //         <h2 className='text-4xl sm:text-4xl text-gray-400 w-[50%] mx-auto'>
     //             Give a youtube link and convert it to a GIF.
     //         </h2>
     //         <form onSubmit={downloadVideo} className='flex flex-col'>

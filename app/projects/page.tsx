@@ -13,7 +13,7 @@ export default function Projects() {
             bg: "bg-[#8651e522] dark:bg-[#8651e577]",
             characteristic: "Charity advocate.",
             _title: (
-                <h2>
+                <h2 className='text-4xl font-bold sm:text-4xl'>
                     Peace
                     <span className='text-[#5651e5] dark:text-[#7b78ce]'>
                         Lab
@@ -47,7 +47,7 @@ export default function Projects() {
             bg: "bg-[#2244ff22] dark:bg-[#2244ff88]",
             characteristic: "Committed Leader.",
             _title: (
-                <h2>
+                <h2 className='text-4xl font-bold sm:text-4xl'>
                     <span className='text-blue-800 dark:text-blue-500'>
                         VIS
                     </span>{" "}
@@ -71,9 +71,9 @@ export default function Projects() {
     ];
 
     return (
-        <section className='w-full h-[calc(100vh-5rem)]  text-center'>
+        <section className='w-full min-h-[calc(100vh-5rem)] text-center'>
             <div className='mx-auto p-2 flex flex-row justify-center items-center'>
-                <h1 className='py-4 text-gray-700 dark:text-gray-100 text-3xl'>
+                <h1 className='md:text-6xl font-bold py-4 text-gray-700 dark:text-gray-100 text-3xl'>
                     My Projects
                 </h1>
             </div>

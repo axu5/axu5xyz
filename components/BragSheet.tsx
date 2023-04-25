@@ -34,12 +34,12 @@ export default function BragSheet({
                     <p className='uppercase dark:text-gray-200 pt-5 underline text-sm tracking-widest text-gray-600'>
                         {characteristic}
                     </p>
-                    <h1 className='py-4 text-gray-700 dark:text-gray-100 uppercase tracking-widest'>
+                    <h1 className='text-5xl font-bold md:text-6xl py-4 text-gray-700 dark:text-gray-100 uppercase tracking-widest'>
                         {_title}
                     </h1>
-                    <h1 className='py-4 text-gray-700 dark:text-gray-200 text-2xl'>
+                    <h3 className='md:text-2xl font-bold py-4 text-gray-700 dark:text-gray-200 text-2xl'>
                         {subtitle}
-                    </h1>
+                    </h3>
                     <p className='py-4 text-gray-600 dark:text-gray-200 max-w-[70%] m-auto'>
                         {additionalInfo}
                     </p>
