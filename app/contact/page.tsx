@@ -1,5 +1,5 @@
 import List from "@/components/List";
-import { Github, AtSign } from "lucide-react";
+import { Github, Twitter, Youtube } from "lucide-react";
 
 export const metadata = {
     title: "contact",
@@ -17,11 +17,20 @@ export default function Contact() {
             ),
         },
         {
-            href: "#",
+            href: "https://www.youtube.com/channel/UC4nP7rXJSErplFed4BBRy6A",
             inner: (
                 <>
-                    <AtSign className='h-4 w-4 mr-2' />
-                    Email
+                    <Youtube className='h-4 w-4 mr-2' />
+                    Youtube
+                </>
+            ),
+        },
+        {
+            href: "https://twitter.com/aho_aleks",
+            inner: (
+                <>
+                    <Twitter className='h-4 w-4 mr-2' />
+                    Twitter
                 </>
             ),
         },

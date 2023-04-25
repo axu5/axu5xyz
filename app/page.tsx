@@ -45,7 +45,7 @@ export default function Home() {
                             width={500}
                         />
                     </Link>
-                    <span className='text-base text-gray-500 dark:text-gray-300'>
+                    <span className='text-base bg-red rounded-lg pt-5 text-gray-500 dark:text-gray-300'>
                         he/him
                     </span>
                 </div>
