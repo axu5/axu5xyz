@@ -13,5 +13,4 @@ datasource db {
 model UrlShortener {
     short       String      @id @unique
     long        String      @unique @db.Text
-    count       Int
 }

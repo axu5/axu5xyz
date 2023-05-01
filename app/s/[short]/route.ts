@@ -1,7 +1,8 @@
-import { db } from "@/shared/db";
 import { type UrlShortener } from "@prisma/client";
 import kv from "@vercel/kv";
 import { NextResponse } from "next/server";
+
+import { db } from "@/shared/db";
 
 // Data does not change often, if at all
 export const revalidate = 24 * 60 * 60;
@@ -19,8 +20,8 @@ export async function GET(
 
     // TODO Migrate non-used KV stores to supabase.
     // (This could be done with )
-    const dbRes = await kv.get<UrlShortener>(short);
-    if (dbRes === null) {
+    const long = await kv.get<string>(short);
+    if (typeof long !== "string") {
         // Check Supabase
         try {
             const dbResBackup = await db.urlShortener.findUnique({
@@ -29,7 +30,7 @@ export async function GET(
 
             if (dbResBackup === null) throw null;
 
-            await kv.set(dbResBackup.short, dbResBackup);
+            await kv.set(short, dbResBackup.long);
 
             return NextResponse.redirect(dbResBackup.long);
         } catch (e) {
@@ -38,8 +39,5 @@ export async function GET(
         }
     }
 
-    dbRes.count += 1;
-    await kv.set(dbRes.short, dbRes);
-
-    return NextResponse.redirect(dbRes.long);
+    return NextResponse.redirect(long);
 }

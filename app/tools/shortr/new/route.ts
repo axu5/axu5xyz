@@ -1,5 +1,5 @@
 import kv from "@vercel/kv";
-// import { db } from "@/shared/db";
+import { db } from "@/shared/db";
 import {
     ShortrBodyType,
     ShortrResponseType,
@@ -19,10 +19,13 @@ export async function POST(req: NextRequest) {
     }
 
     // TODO figure out if collisions could and would happen
-    await kv.set<UrlShortener>(short, {
-        long,
-        short,
-        count: 0,
+    await kv.set<string>(short, long);
+
+    await db.urlShortener.create({
+        data: {
+            short,
+            long,
+        },
     });
 
     return NextResponse.json({
