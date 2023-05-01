@@ -38,5 +38,8 @@ export async function GET(
         }
     }
 
+    dbRes.count += 1;
+    await kv.set(dbRes.short, dbRes);
+
     return NextResponse.redirect(dbRes.long);
 }
