@@ -1,4 +1,6 @@
 import { db } from "@/shared/db";
+import { type UrlShortener } from "@prisma/client";
+import kv from "@vercel/kv";
 import { NextResponse } from "next/server";
 
 // Data does not change often, if at all
@@ -15,20 +17,26 @@ export async function GET(
         return new Response("Not Found", { status: 404 });
     }
 
-    try {
-        const dbRes = await db.urlShortener.update({
-            where: {
-                short,
-            },
-            data: {
-                count: {
-                    increment: 1,
-                },
-            },
-        });
-        return NextResponse.redirect(dbRes.long);
-    } catch (_) {
-        // not found
-        return new Response("Not Found", { status: 404 });
+    // TODO Migrate non-used KV stores to supabase.
+    // (This could be done with )
+    const dbRes = await kv.get<UrlShortener>(short);
+    if (dbRes === null) {
+        // Check Supabase
+        try {
+            const dbResBackup = await db.urlShortener.findUnique({
+                where: { short },
+            });
+
+            if (dbResBackup === null) throw null;
+
+            await kv.set(dbResBackup.short, dbResBackup);
+
+            return NextResponse.redirect(dbResBackup.long);
+        } catch (e) {
+            // not found
+            return new Response("Not Found", { status: 404 });
+        }
     }
+
+    return NextResponse.redirect(dbRes.long);
 }

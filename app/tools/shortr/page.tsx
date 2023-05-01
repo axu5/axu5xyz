@@ -6,7 +6,7 @@ import {
     hashURL,
 } from "@/shared/tools/shortr";
 import { type FormEvent, useState } from "react";
-import { ArrowRight, ClipboardCopy } from "lucide-react";
+import { ClipboardCopy } from "lucide-react";
 
 function makeLink(short: string) {
     // have access to window because of "use client"
