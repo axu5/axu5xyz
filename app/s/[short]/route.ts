@@ -18,8 +18,7 @@ export async function GET(
         return new Response("Not Found", { status: 404 });
     }
 
-    // TODO Migrate non-used KV stores to supabase.
-    // (This could be done with )
+    // TODO Migrate rarely-used KV stores to supabase.
     const long = await kv.get<string>(short);
     if (typeof long !== "string") {
         // Check Supabase

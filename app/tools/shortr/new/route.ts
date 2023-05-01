@@ -6,13 +6,19 @@ import {
     hashURL,
 } from "@/shared/tools/shortr";
 import { type NextRequest, NextResponse } from "next/server";
-import { type UrlShortener } from "@prisma/client";
 
 export async function POST(req: NextRequest) {
     const { long } = (await req.json()) as unknown as ShortrBodyType;
 
     const short = hashURL(long);
-    if (!short.length) {
+
+    const exists = await db.urlShortener.findUnique({
+        where: {
+            short,
+        },
+    });
+
+    if (!short.length || exists) {
         return new Response("Bad input", {
             status: 400,
         });
